@@ -8,6 +8,7 @@ import support.plugin.onyx.commands.handler.Info;
 import support.plugin.onyx.config.Configuration;
 import support.plugin.onyx.factions.Faction;
 import support.plugin.onyx.factions.FactionManager;
+import support.plugin.onyx.factions.enums.FactionRole;
 
 /*
 Copyright (c) 2017 PluginManager LTD. All rights reserved.
@@ -71,16 +72,22 @@ public class FactionJoinCommand implements ICommand {
 
         }
 
-        String attemptedFactionName = args[0];
+        Faction attemptedFaction = null;
 
-        if (factionManager.getFactionByName(attemptedFactionName) == null) {
+        if (factionManager.getFactionByPlayerName(args[0]) != null) {
 
-            player.sendMessage(ChatColor.translateAlternateColorCodes('&', locale.getString("faction.general.non_existent").replace("{faction}", args[0])));
+            attemptedFaction = factionManager.getFactionByPlayerName(args[0]);
+
+        } else if (factionManager.getFactionByName(args[0]) != null) {
+
+            attemptedFaction = factionManager.getFactionByName(args[0]);
+
+        } else {
+
+            player.sendMessage(locale.translateString("faction.general.non_existent").replace("{faction}", args[0]));
             return;
 
         }
-
-        Faction attemptedFaction = factionManager.getFactionByName(args[0]);
 
         if (!attemptedFaction.isOpen()) {
             if (!attemptedFaction.getInvitedPlayers().contains(player.getUniqueId())) {
@@ -94,11 +101,15 @@ public class FactionJoinCommand implements ICommand {
 
         if (faction.getFactionMembers().size() >= instance.getSettings().getInt("faction.max_players")) {
 
+            player.sendMessage(locale.translateString("faction.general.max_players_reached"));
+            return;
 
         }
 
-        // If they have been invited....
+        player.sendMessage(locale.translateString("faction.join.success").replace("{faction}", faction.getFactionName()));
+        faction.sendMessage(locale.translateString("faction.join.success_broadcast").replace("{player}", player.getName()));
 
+        faction.getFactionMembers().put(player.getUniqueId(), FactionRole.MEMBER);
 
     }
 
