@@ -248,7 +248,7 @@ public class Faction {
 
     /**
      * Sends a message to all online members
-     * @param message
+     * @param message the message
      */
     public void sendMessage(String message) {
 
@@ -262,7 +262,7 @@ public class Faction {
 
     /**
      * Sends a message to all online officers
-     * @param message
+     * @param message the message
      */
     public void sendOfficerMessage(String message) {
 

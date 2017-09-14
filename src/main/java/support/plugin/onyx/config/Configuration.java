@@ -42,8 +42,8 @@ public class Configuration {
     /**
      * Gets a double from the configuration
      *
-     * @param path
-     * @return
+     * @param path the string path
+     * @return the double value
      */
     public double getDouble(String path) {
 
@@ -58,8 +58,8 @@ public class Configuration {
 
     /**
      * Gets an integer from the configuration
-     * @param path
-     * @return
+     * @param path the string path
+     * @return the integer value
      */
     public int getInt(String path) {
 
@@ -74,8 +74,8 @@ public class Configuration {
 
     /**
      * Gets a boolean from the configuration
-     * @param path
-     * @return
+     * @param path the string path
+     * @return the boolean value
      */
     public boolean getBoolean(String path) {
 
@@ -90,8 +90,8 @@ public class Configuration {
 
     /**
      * Gets a string from the configuration
-     * @param path
-     * @return
+     * @param path the string path
+     * @return the string value
      */
     public String getString(String path) {
 
@@ -106,8 +106,8 @@ public class Configuration {
 
     /**
      * Gets a string list from the configuration
-     * @param path
-     * @return
+     * @param path the string path
+     * @return the string list value
      */
     public List<String> getStringList(String path) {
 
@@ -130,8 +130,8 @@ public class Configuration {
 
     /**
      * Gets a configurationsection from the configuration
-     * @param path
-     * @return
+     * @param path the string path
+     * @return the configuration section
      */
     public ConfigurationSection getConfigurationSection(String path) {
         if (configuration.getConfigurationSection(path) == null) {
@@ -142,9 +142,9 @@ public class Configuration {
     }
 
     /**
-     * Gets a string and changes the '&' symbols into chatcolours
-     * @param path
-     * @return
+     * Gets a string and changes the ampersand symbols into chatcolours
+     * @param path the string path
+     * @return the translated string
      */
     public String translateString(String path) {
 
@@ -154,8 +154,8 @@ public class Configuration {
 
     /**
      * Sets data to the configuration
-     * @param path
-     * @param value
+     * @param path the string path
+     * @param value the object value
      */
     public void set(String path, Object value) {
         configuration.set(path, value);

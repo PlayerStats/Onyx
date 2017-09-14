@@ -50,8 +50,8 @@ public class Claim {
     private double price;
 
     /**
-     * @param location
-     * @return
+     * @param location the location in question
+     * @return whether the location is inside the claim or not
      */
     public boolean insideClaim(Location location) {
 
@@ -61,8 +61,8 @@ public class Claim {
 
     /**
      *
-     * @param player
-     * @return
+     * @param player the player in question
+     * @return whether the player is inside the claim or not
      */
     public boolean insideClaim(Player player) {
 

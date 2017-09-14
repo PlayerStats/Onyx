@@ -48,11 +48,11 @@ public class FactionCommand implements CommandExecutor {
     /**
      * The main executor for the sub-commands
      *
-     * @param sender
-     * @param cmd
-     * @param commandLabel
-     * @param args
-     * @return
+     * @param sender the command sender
+     * @param cmd the command
+     * @param commandLabel the command label
+     * @param args the command arguments
+     * @return success boolean
      */
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String commandLabel, String[] args) {

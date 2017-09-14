@@ -53,7 +53,7 @@ public class FactionsDao {
     /**
      * Inserts a record into the keystore
      *
-     * @param faction
+     * @param faction the faction in question
      */
     public void insert(Faction faction) {
 
@@ -67,7 +67,7 @@ public class FactionsDao {
 
     /**
      * Updates a record inside the keystore
-     * @param faction
+     * @param faction the faction in question
      */
     public void update(Faction faction) {
 
@@ -81,7 +81,7 @@ public class FactionsDao {
 
     /**
      * Removes a record from the keystore
-     * @param faction
+     * @param faction the faction in question
      */
     public void delete(Faction faction) {
 
@@ -95,7 +95,7 @@ public class FactionsDao {
 
     /**
      * Returns all records inside the keystore
-     * @return
+     * @return the list of factions
      */
     public List<Faction> getAll() {
 
@@ -109,7 +109,7 @@ public class FactionsDao {
 
     /**
      * Saves all records to the keystore
-     * @param factions
+     * @param factions the factions you want to save
      */
     public void saveAll(List<Faction> factions) {
 
@@ -123,8 +123,8 @@ public class FactionsDao {
 
     /**
      * Gets a faction from the keystore
-     * @param uuid
-     * @return
+     * @param uuid the faction uuid
+     * @return the faction
      */
     public Faction getFaction(UUID uuid) {
 
@@ -142,8 +142,8 @@ public class FactionsDao {
 
     /**
      * Ensures that all records are created on the same key 'baseline'..?
-     * @param faction
-     * @return
+     * @param faction the faction in question
+     * @return a key for the profile in question
      */
     public String getKey(Faction faction) {
         return "onyx:factions:" + Onyx.getInstance().getSettings().getInt("map.identifier") + ":" + faction.getFactionId().toString();

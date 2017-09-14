@@ -146,8 +146,8 @@ public class TimerManager {
 
     /**
      * Checks if the player has active timers
-     * @param player
-     * @return
+     * @param player the player
+     * @return whether the player has any timers or not
      */
     public boolean hasActiveTimers(Player player) {
         if (this.activeTimers.containsKey(player.getUniqueId()))
@@ -161,9 +161,9 @@ public class TimerManager {
 
     /**
      * Gets the timer with the defined type
-     * @param player
-     * @param timerType
-     * @return
+     * @param player the player
+     * @param timerType the timer type
+     * @return the timer
      */
     public Timer getTimer(Player player, TimerType timerType) {
         if (activeTimers.get(player.getUniqueId()) == null)
