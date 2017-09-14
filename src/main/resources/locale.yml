@@ -51,6 +51,10 @@ faction:
     attempted_broadcast: "&c{player} attempted to join your faction."
     success: "&aYou have &lsuccessfully &ajoined &l{faction}&a."
     success_broadcast: "&a&l{player} &ahas joined your faction."
+  show:
+    player_faction:
+
+
 allies:
   no_damage: "&cYou cannot damage your ally!"
   damage_alert: "&cBe careful! {name} is in an allied faction!"
